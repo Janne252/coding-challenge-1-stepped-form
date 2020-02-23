@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stepper Form | Coding Challenge #1</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="page">
+        <h1>Stepped form</h1>
+        <form class="stepped-form">
+            <label class="step">
+                <input class="step-toggle" type="radio" name="form-step" value="1" id="dd" checked />
+                <h3 data-index="1"><header>Username</header></h3>
+
+                <section>
+                    <label>
+                        <input type="text" name="username" placeholder="Username" />
+                    </label>
+                    <p class="input-help">Your publicly visible username.</p>
+                </section>
+
+            </label>
+            <label class="step">
+                <input class="step-toggle" type="radio" name="form-step" value="2" />
+                <h3 data-index="2"><header>Email</header></h3>
+            
+                <section>
+                    <label>
+                        <input type="email" name="email" placeholder="john.doe@example.com" />
+                    </label>
+                    <p class="input-help">Registration email used to activate your account.</p>
+                </section>
+
+            </label>
+            <label class="step">
+                <input class="step-toggle" type="radio" name="form-step" value="3" />
+                <h3 data-index="3"><header>Password</header></h3>
+
+                <section>
+                    <label>
+                        <input type="password" name="password" placeholder="********" />
+                    </label>
+                    <p class="input-help">Password, at least 8 characters.</p>
+                </section>
+
+            </label>
+            <label class="step">
+                <input class="step-toggle" type="radio" name="form-step" value="4" />
+                <h3 data-index="4"><header>Confirm</header></h3>
+
+                <section>
+                    <br />
+                    <div>
+                        <button type="submit">
+                            Submit
+                        </button>
+                    </div>
+                    <br />
+                    <p class="input-help">By registering an account, you agree to the terms and conditions.</p>
+                </section>
+            </label>
+        </form>
+    </div>
+    <!-- @see https://stackoverflow.com/a/42969608 -->
+    <script> </script>
+</body>
+</html>

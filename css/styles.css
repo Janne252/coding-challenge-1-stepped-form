@@ -1,0 +1,245 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Lato;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+form.stepped-form {
+    /* Width is set by the content */
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    padding: 16px;
+}
+
+
+form.stepped-form .step {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    min-height: 0;
+    background-color: #ffffff;
+}
+
+form.stepped-form .step:last-child {
+    flex: 0 1 auto;
+    width: auto;
+}
+
+form.stepped-form .step:last-child {
+    min-height: 0;
+}
+
+form.stepped-form .step section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 64px;
+    min-height: 64px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition-property: margin;
+    transition-duration: 0.3s;
+}
+
+/* section is hidden by default, revealed by checking the <input type="radio" /> */
+form.stepped-form .step section > * {
+    display: flex;
+    transition-property: visibility, opacity;
+    will-change: opacity;
+    transition-duration: 0.3s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* Native <input type="radio" /> is moved away from view while technically remaining functional */
+form.stepped-form .step .step-toggle {
+    position: relative;
+    left: -100vw;
+}
+
+form.stepped-form .step h3 {
+    font-size: 100%;
+    width: 2em;
+    cursor: pointer;
+}
+
+form.stepped-form .step h3:hover header {
+    color: #212121;
+}
+
+/* Section header */
+form.stepped-form .step h3 > header {    
+    position: absolute;
+    background-color: #ffffff;
+    padding: 0.5em 0;
+    top: 1em;
+    left: 3.5em;
+    color: #bdbdbd;
+    z-index: 1;
+    transform: translateY(-50%);
+    padding-right: 0.5em;
+    line-height: 1em;
+    transition-property: color;
+    transition-duration: 0.3s;
+    font-weight: normal;
+}
+
+/* Active section header color */
+form.stepped-form .step .step-toggle:checked ~ h3 header {
+    color: #212121;
+}
+
+/* Section icon */
+form.stepped-form .step h3::before {
+    display: flex;
+    content: attr(data-index);
+    width: 2em;
+    height: 2em;
+    align-items: center;
+    justify-content: center;
+    color: #9E9E9E;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition-property: background-color, color;
+    transition-duration: 0.3s;
+    font-weight: bold;
+}
+
+
+/* Active section icon */
+form.stepped-form .step h3:hover::before {
+    color: #757575;
+}
+form.stepped-form .step .step-toggle:checked ~ h3::before {
+    color: #eceff1;
+    background-color: #607d8b;
+}
+
+/* Section connector line */
+form.stepped-form .step h3::after {
+    position: absolute;
+    width: 4px;
+    height: calc(100% - 3em);
+    top: 2.5em;
+    left: 1.75em;
+    transform: translateX(-50%);
+    content: "";
+    background-color: #e0e0e0;
+}
+
+/* No connector after last section */
+form.stepped-form .step:last-child h3::after {
+    display: none;
+}
+
+/* "Next" button */
+form.stepped-form .step + .step::after {
+    content: "Next";
+    position: absolute;
+    top: 0;
+    transform: translateY(-100%);
+    left: 5em;
+    z-index: 0;
+    line-height: 1em;
+
+    border: none;
+    padding: 8px;
+    text-transform: uppercase;
+    color: #616161;
+    background-color: #EEEEEE;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Hide "Next" button with an overlay if the step is not active */
+form.stepped-form .step .step-toggle ~section::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 2em;
+    left: 3em;
+    background-color: #ffffff;
+    bottom: 0;
+    z-index: 1;
+    transition-property: opacity, visibility;
+    transition-duration: 0.3s;
+    will-change: opacity;
+    opacity: 0; 
+    visibility: hidden;
+}
+
+/* Set "Next" button hide overlay visible */
+form.stepped-form .step .step-toggle:not(:checked) ~ section::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Active section margins */
+form.stepped-form .step .step-toggle:checked ~ section {
+    max-height: initial;
+    margin-top: 32px;
+    margin-bottom: 64px;
+}
+
+/* Active section content */
+form.stepped-form .step .step-toggle:checked ~ section > * {
+    visibility: visible;
+    opacity: 1;
+    position: static;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    padding: 8px;
+    border: 1px solid #9E9E9E;
+    font-size: 16px;
+    transition-property: border-color;
+    transition-duration: 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+    border-color: #424242;
+    outline: none;
+}
+
+button {
+    border: none;
+    padding: 8px;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: white;
+    background-color: #616161;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #424242;
+}
+
+.input-help {
+    color: #9E9E9E;
+    font-size: 14px;
+}
+
+.page {
+    max-width: 800px;
+    margin: 16px auto;
+    padding: 16px;
+    box-shadow: 0 0 12px rgba(128, 128, 128, 0.4);
+}
+
+.page > h1 {
+    color: #757575;
+    padding-bottom: 0.25em;
+    border-bottom: 1px solid #E0E0E0;
+    margin-bottom: 1em;
+}
