@@ -1,5 +1,7 @@
 # Coding Challenge #1 | CSS-only Stepped Form
 
+Deployed on GitHub pages: [janne252.github.io/coding-challenge-1-stepped-form/](https://janne252.github.io/coding-challenge-1-stepped-form/)
+
 This repository is a submission to [Colt Steele](https://www.youtube.com/channel/UCrqAGUPPMOdo0jfQ6grikZw)'s [Coding Challenge #1](https://www.youtube.com/watch?v=qGwR_DSSnuQ).
 
 This repository demonstrates a stepped form that doesn't use JavaScript at all. 
