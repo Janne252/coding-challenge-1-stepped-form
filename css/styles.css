@@ -115,8 +115,7 @@ form.stepped-form .step aside::before {
     height: 2em;
     min-width: 2em;
     min-height: 2em;
-    /* align-items: center; */
-    padding-top: 6.5px;
+    align-items: center;
     justify-content: center;
     color: #9E9E9E;
     background-color: #e0e0e0;
