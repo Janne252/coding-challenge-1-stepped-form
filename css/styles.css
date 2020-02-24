@@ -66,23 +66,29 @@ form.stepped-form .step .step-toggle {
     left: -100vw;
 }
 
-form.stepped-form .step h3 {
+form.stepped-form .step aside {
+    position: relative;
     font-size: 100%;
     width: 2em;
+    min-width: 2em;
     cursor: pointer;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
-form.stepped-form .step h3:hover header {
+form.stepped-form .step aside:hover header {
     color: #212121;
 }
 
 /* Section header */
-form.stepped-form .step h3 > header {    
+form.stepped-form .step aside > header {    
     position: absolute;
     background-color: #ffffff;
-    padding: 0.5em 0;
+    padding: 0.5em 0 0.5em 1em;
     top: 1em;
-    left: 3.5em;
+    left: 2em;
     color: #bdbdbd;
     z-index: 1;
     transform: translateY(-50%);
@@ -94,17 +100,23 @@ form.stepped-form .step h3 > header {
 }
 
 /* Active section header color */
-form.stepped-form .step .step-toggle:checked ~ h3 header {
+form.stepped-form .step .step-toggle:checked ~ aside header {
     color: #212121;
 }
 
 /* Section icon */
-form.stepped-form .step h3::before {
+form.stepped-form .step aside::before {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     content: attr(data-index);
     width: 2em;
     height: 2em;
-    align-items: center;
+    min-width: 2em;
+    min-height: 2em;
+    /* align-items: center; */
+    padding-top: 6.5px;
     justify-content: center;
     color: #9E9E9E;
     background-color: #e0e0e0;
@@ -117,28 +129,28 @@ form.stepped-form .step h3::before {
 
 
 /* Active section icon */
-form.stepped-form .step h3:hover::before {
+form.stepped-form .step aside:hover::before {
     color: #757575;
 }
-form.stepped-form .step .step-toggle:checked ~ h3::before {
+form.stepped-form .step .step-toggle:checked ~ aside::before {
     color: #eceff1;
     background-color: #607d8b;
 }
 
 /* Section connector line */
-form.stepped-form .step h3::after {
+form.stepped-form .step aside::after {
     position: absolute;
     width: 4px;
     height: calc(100% - 3em);
     top: 2.5em;
-    left: 1.75em;
+    left: 50%;
     transform: translateX(-50%);
     content: "";
     background-color: #e0e0e0;
 }
 
 /* No connector after last section */
-form.stepped-form .step:last-child h3::after {
+form.stepped-form .step:last-child aside::after {
     display: none;
 }
 
