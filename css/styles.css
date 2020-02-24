@@ -139,7 +139,7 @@ form.stepped-form .step .step-toggle:checked ~ aside::before {
 /* Section connector line */
 form.stepped-form .step aside::after {
     position: absolute;
-    width: 4px;
+    width: 2px;
     height: calc(100% - 3em);
     top: 2.5em;
     left: 50%;
