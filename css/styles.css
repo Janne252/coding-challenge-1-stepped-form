@@ -62,7 +62,7 @@ form.stepped-form .step section > * {
 
 /* Native <input type="radio" /> is moved away from view while technically remaining functional */
 form.stepped-form .step .step-toggle {
-    position: relative;
+    position: absolute;
     left: -100vw;
 }
 
