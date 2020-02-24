@@ -8,6 +8,7 @@ html {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    line-height: 1;
 }
 
 form.stepped-form {
@@ -93,7 +94,6 @@ form.stepped-form .step aside > header {
     z-index: 1;
     transform: translateY(-50%);
     padding-right: 0.5em;
-    line-height: 1em;
     transition-property: color;
     transition-duration: 0.3s;
     font-weight: normal;
@@ -124,7 +124,6 @@ form.stepped-form .step aside::before {
     transition-property: background-color, color;
     transition-duration: 0.3s;
     font-weight: bold;
-    line-height: 1;
 }
 
 /* Active section icon */
@@ -161,7 +160,6 @@ form.stepped-form .step + .step::after {
     transform: translateY(-100%);
     left: 5em;
     z-index: 0;
-    line-height: 1em;
 
     border: none;
     padding: 8px;
