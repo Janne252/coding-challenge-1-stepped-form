@@ -266,5 +266,7 @@ button:hover {
     color: #757575;
     padding-bottom: 0.25em;
     border-bottom: 1px solid #E0E0E0;
-    margin-bottom: 1em;
+    margin: -16px;
+    padding: 16px;
+    margin-bottom: 16px;
 }
